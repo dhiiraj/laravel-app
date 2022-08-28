@@ -44,13 +44,11 @@
                 </x-jet-button>
             </div>
             <br />
-            <p style="margin-left:265px">OR</p>
+            <p style="margin-left:170px">OR</p>
             <br />
-            <div class="form-group">
-                <div class="col-md-8 col-md-offset-4">
+            <x-jet-secondary-button style="width:100%">
                     <a href="{{url('/redirect')}}" class="btn btn-primary">Login with Facebook</a>
-                </div>
-            </div>
+            </x-jet-secondary-button>
         </form>
     </x-jet-authentication-card>
 </x-guest-layout>

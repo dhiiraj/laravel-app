@@ -23,9 +23,9 @@
             @auth
             <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
             @else
-            <div class="fb-login-button" data-width="" data-size="small" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+            <a href="{{ url('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Login</a>
             @if (Route::has('register'))
-            <!-- <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a> -->
+            <a href="{{ route('login') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
             @endif
             @endauth
         </div>
@@ -33,27 +33,4 @@
 
     </div>
 </body>
-<div id="fb-root"></div>
-<script src="//connect.facebook.net/en_US/all.js"></script>
-<script>
-    FB.init({
-        appId: 1542682376166615,
-        status: true,
-        xfbml: true,
-        version: 'v2.9'
-    });
-    $(window).load(function() {
-        FB.login(function(response) {
-            if (response.authResponse) {
-                console.log('Welcome!  Fetching your information.... ');
-                FB.api('/me', function(response) {
-                    console.log('Good to see you, ' + response.name + '.');
-                });
-            } else {
-                console.log('User cancelled login or did not fully authorize.');
-            }
-        });
-    });
-</script>
-
 </html>
